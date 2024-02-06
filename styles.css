@@ -15,7 +15,6 @@ header {
     display: flex;
     justify-content: center;
     padding:12px;
-    margin-top: 12px;
     background-color:#F3F1EB;
     align-items: center;
 }
