@@ -2,61 +2,442 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hit Me Upp</title>
-    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        header {
+            background-color: #000000;
+            padding: 4% 0;
+            max-width: 100%;
+        }
+        .header-logo {
+            display: flex;
+            width: 80%;
+            height: auto;
+            justify-content: center;
+        }
+
+        .header-logo img {
+            width: 200px;
+        }
+
+        body{
+            background-color: #F3F1EB;
+            font-family: "cofo-gothic-variable",sans-serif;
+            font-weight: 800;
+            
+        }
+        button {
+            font-size: 18px;
+            border-radius: 6px;
+            background-color: #000000;
+            color: #F3F1EB;
+            padding: 12px 24px;
+            margin: 12px;
+            border-width: 2px;
+            border-color: #000000;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: transparent;
+            color: #000000;
+            border-color: #000000;
+            border-width: 2px;
+            box-shadow: inset;
+        }
+        button:disabled{
+            background-color: #ccc;
+            color:#333;
+
+        }
+
+
+        .container1 {
+             width: 100%;
+             display: grid;
+             background-color: #ffffff; /* Set the background color */
+             background-image: url('https://images.unsplash.com/photo-1680783954745-3249be59e527?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Set the background image */
+             background-size: cover;
+             background-position: center;
+             padding-top: 4%;
+             padding-bottom: 4%;
+        }
+        .container2, .container3, .container4 {
+            width: 80%;
+            margin: 0 auto;
+            padding: 4% 0;
+            background-color: #F3F1EB;
+        }
+        .container3{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 16%
+        }
+        .container4{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 8%
+        }
+        .container5, {
+            width: 60%;
+            margin: 0 auto;
+            padding: 12% 0;
+            background-color: #F3F1EB;
+        }
+
+        .column{
+            padding-left: 10%;
+            padding-top: 4%;
+            padding-bottom: 4%;
+            gap: 12px;
+        }
+
+        .column2 {
+            text-align: center;
+            float: center;
+            width: 35%;
+            padding: 4%;
+            background-color:black;
+            border-radius:30px;
+            
+        }
+        .column3 {
+            text-align: center;
+            float: center;
+            width: 30%;
+            background-color:black;
+            border-radius:30px;
+            padding-bottom: 32px;
+            
+        }
+
+        h1{
+            color:#000000;
+            font-size: 48px;
+            font-weight: 800;
+            margin-top: 14px;
+            margin-bottom: 14px;
+        }
+
+        h2{
+            color:#000000;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        h3{
+            color:#fff;
+            font-size: 20px;
+            font-weight: 600; 
+        }
+
+
+        .small{
+            color:#fff;
+            font-weight: 400; 
+            font-size: 20px;
+        }
+        p{
+            font-weight: 400;
+            color: #fff;
+        }
+
+        span{
+            color:#000000;
+        }
+
+       
+
+        @media screen and (max-width: 600px) {
+            .column2,.column3 {
+                width: 100%;
+            }
+            .container3{
+                width: 80%;
+                background-color: #F3F1EB;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+            }
+            
+            .container4{
+                width: 80%;
+                background-color: #F3F1EB;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+
+            
+            }
+            .container5{
+                width:80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+
+            }
+
+            .small, .step, .center, .circle, p, label, div {
+                font-size: 20px;
+            }
+        }
+    
+
+        /* Style for form */
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        .col-30 {
+            flex: 0 0 50%; /* Two columns on larger screens */
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        .col-60 {
+            flex: 0 0 100%; /* Two columns on larger screens */
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #000000;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 200px;
+            resize: none;
+        }
+
+        button[type="submit"] {
+            width: auto;
+            background-color: #000000;
+            color: #F3F1EB;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 24px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: transparent;
+            color: #000000;
+            border: 2px solid #000000;
+        }
+
+        .step{
+            padding-left:40px;
+            padding-right:40px;
+            text-align: center; 
+            
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            width: 60px; /* Set the width of the circle */
+            height:60px; /* Set the height of the circle */
+            border-radius: 50%; /* Make the border radius 50% to create a circle */
+            color: black; /* Set background color */
+            background-color: #fff; /* Set text color */
+            display: flex; /* Use flexbox to center content */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            font-size: 32px; /* Set font size */
+        }
+        .p1{
+            color:#000000;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            padding-left: 4%;
+            padding-right:4%;
+        }
+        label{
+            color:#000000;
+        }
+        div {
+            display: inline-block;
+        }
+
+        div label {
+            display: block;
+        }
+
+    </style>
 </head>
+
 <body>
 
-    <header>
-        
-    </header>
-    <div class="container">
+<header>
+    <div class="header-logo">
+        <img src="/Users/pinkyarun/Desktop/connectme/logowithoutbg.png" alt="Description of the image">
+    </div>
+</header>
+
+<div class="container1">
+    <div class="column">
+        <section class="opening">
+            <h1>Connect.</h1>
+            <h1>Make friends.</h1>
+            <h1>Networking.</h1>
+            <p><span class="small">In one tap</span></p>
+        </section>
+    </div>
+</div>
+
+<h2>What we do?</h2>
+<div class="container2">
+    <div class="p1"> We're dedicated to revolutionizing the way you connect, make friends, and network. Leveraging cutting-edge technology and innovative design
+        with Hit Me Upp, you can unlock a world of possibilities with unparalleled ease. Join us today and experience the future of networking. Connect, engage, and thrive with Hit Me Upp.</div>
+</div>
+
+<h2>What we offer?</h2>
+<div class="container3">
+    <div class="column2">
         <div class="image-container">
             <img
-                    src="https://media.licdn.com/dms/image/C5603AQFQTCky8aXKCQ/profile-displayphoto-shrink_800_800/0/1615772519579?e=1712793600&v=beta&t=AuD-7Nyp_h2BVFcALG3R9OlgkIfL83vuST_yhxN4apQ"
-                    alt="Pinky Arunwattanamongkol"/>
+                    src="/Users/pinkyarun/Desktop/connectme/img1.png"
+                    alt="tap"/>
         </div>
-        <h1>Pinky Arunwattanamongkol</h1>
-
-        <a class="tile" href="https://www.linkedin.com/in/arunwann/" target="_blank">
-            <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
-            </div>
-            <p>Linkedin: Pinky Arunwattanamongkol</p>
-            <div class="tile-share-button" link="https://www.linkedin.com/in/arunwann/">
-                <svg width="16" height="16" viewBox="0 0 16 16" enable-background="new 0 0 24 24" class="sc-gKsewC iPWGYb"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.6464 3.85347L11 4.20702L11.7071 3.49992L11.3536 3.14636L8.35355 0.146362H7.64645L4.64645 3.14636L4.29289 3.49992L5 4.20702L5.35355 3.85347L7.5 1.70702V9.49992V9.99992H8.5V9.49992V1.70702L10.6464 3.85347ZM1 5.49994L1.5 4.99994H4V5.99994H2V14.9999H14V5.99994H12V4.99994H14.5L15 5.49994V15.4999L14.5 15.9999H1.5L1 15.4999V5.49994Z" fill="currentColor"></path></svg>
-            </div>
-        </a>
-        <a class="tile" href="mailto:arunwann@mail.uc.edu" target="_blank">
-            <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
-            </div>
-            <p>Email: Arunwann@mail.uc.edu </p>
-            <div class="tile-share-button" link="arunwann@mail.uc.edu">
-                <svg width="16" height="16" viewBox="0 0 16 16" enable-background="new 0 0 24 24" class="sc-gKsewC iPWGYb"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.6464 3.85347L11 4.20702L11.7071 3.49992L11.3536 3.14636L8.35355 0.146362H7.64645L4.64645 3.14636L4.29289 3.49992L5 4.20702L5.35355 3.85347L7.5 1.70702V9.49992V9.99992H8.5V9.49992V1.70702L10.6464 3.85347ZM1 5.49994L1.5 4.99994H4V5.99994H2V14.9999H14V5.99994H12V4.99994H14.5L15 5.49994V15.4999L14.5 15.9999H1.5L1 15.4999V5.49994Z" fill="currentColor"></path></svg>
-            </div>
-        </a>
-        <a class="tile" href="https://pinkyarun.com" target="_blank">
-            <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z"/></svg>
-            </div>
-            <p>www.pinkyarun.com</p>
-            <div class="tile-share-button" link="https://pinkyarun.com">
-                <svg width="16" height="16" viewBox="0 0 16 16" enable-background="new 0 0 24 24" class="sc-gKsewC iPWGYb"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.6464 3.85347L11 4.20702L11.7071 3.49992L11.3536 3.14636L8.35355 0.146362H7.64645L4.64645 3.14636L4.29289 3.49992L5 4.20702L5.35355 3.85347L7.5 1.70702V9.49992V9.99992H8.5V9.49992V1.70702L10.6464 3.85347ZM1 5.49994L1.5 4.99994H4V5.99994H2V14.9999H14V5.99994H12V4.99994H14.5L15 5.49994V15.4999L14.5 15.9999H1.5L1 15.4999V5.49994Z" fill="currentColor"></path></svg>
-            </div>
-        </a>
+        <!-- Offer section 1 -->
+        <section class="offer">
+            <h3>Upgrade your current business card to the next level!</h3>
+            <p>If you have a business card that represents your brand but want to get an upgrade, we can help you with that as well!</p>
+            <!--<p>Starting $20 (plus tax)</p> -->
+            <!--<button>order now</button> -->
+        </section>
     </div>
+    <div class="column2">
+        <div class="image-container">
+            <img
+                    src="https://images.unsplash.com/photo-1587614313085-5da51cebd8ac?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="tap"/>
+        </div>
+        <!-- Offer section 2 -->
+        <section class="offer">
+            <h3>Get your business card customized by our team of designers!</h3>
+            <p>Start from scratch with our team, designing business cards that represent you and connect you in one tap</p>
+            <!--<p>Starting $70 (plus tax)</p>-->
+            <!--<button>order now</button> -->
+        </section>
+    </div>
+</div>
 
-<script src="app.js"></script>
+<h2>How it works?</h2>
+<div class="container4">
+    <div class="column3">
+        <!-- Step 1 -->
+        <section class="step">
+            <p>Step</p>
+            <span class="center">
+                <div class="circle">1</div>
+            </span>
+            <h3>Put in a request for service, we will send out the quote!</h3>
+            <p>(If you have a current business card that you wish to use)</p>
+        </section>
+    </div>
+    <div class="column3">
+        <!-- Step 2 -->
+        <section class="step">
+            <p>Step</p>
+            <span class="center">
+                <div class="circle">2</div>
+            </span>
+            <h3>If you choose to get your card designed by our designer, you'll be put in touch with our team to talk more about your demands.</h3>
+        </section>
+    </div>
+    <div class="column3">
+        <!-- Step 3 -->
+        <section class="step">
+            <p>Step</p>
+            <span class="center">
+                <div class="circle">3</div>
+            </span>
+            <h3>Sit back and relax, we'll ship it right to your door!</h3>
+        </section>
+    </div>
+</div>
 
-</body>
+<h2>Contact us?</h2>
+
+<div class="container5">
+    <span id="msg"> </span>
+    <form name="contact-me-google-sheet" method="GET">
+        <div class="col-30">
+            <label for="fname">First name</label>
+            <input type="text" name="fname" required>
+        </div>
+        <div class="col-30">
+            <label for="fname">Last name</label>
+            <input type="text" name="lname" required>
+        </div> 
+        <br>  
+        <div class="col-30">
+            <label for="tel">Phone number</label>
+                <input type="number" name="tel" required>
+        </div>
+        <div class="col-30">
+            <label for="email">Email</label>
+                <input type="text" name="email" required>
+        </div>
+         <br>
+        <div class="col-60">
+            <label for="message">Message</label>
+            <textarea type="text" name="message" placeholder="Leave your message!" style="height:200px" required>
+            </textarea>
+            <br>
+            <button type="submit">Send</button>
+        </div>
+    </form>
+    
+</div>
+
 
 <div class="footer">
     <p>© 2024 Hit Me Upp - All Rights Reserved</p>
 </div>
 
-<span>
-    <p>© 2024 Hit Me Upp - All Rights Reserved</p>
-</span>
-</html>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby-weRcA5_x8LAtsISD57ULNLP2TTLHUWJ9NHJKj_BYGyKWsXskDst47VGUk7eW_PHxbQ/exec'
+    const form = document.forms['contact-me-google-sheet']
+    const msg =document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => 
+        {
+            msg.innerHTML = "Thank you for your message, we'll get back to you soon!"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
