@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 14.2//EN
+N:Bowman;Doug;;;
+FN:Doug Bowman
+ORG:Energy Insurance Agency;
+EMAIL;type=INTERNET;type=WORK;type=pref:dbowman@energyinsagency.com
+TEL;type=CELL;type=VOICE;type=pref:+15132595757
+TEL;type=MAIN:+1(513) 947-2610
+TEL;type=WORK;type=VOICE:+151 39472610
+ADR;type=WORK;type=pref:;;7661 Beechmont Ave\, Suite 220;Cincinnati;Ohio;45255;
+END:VCARD
