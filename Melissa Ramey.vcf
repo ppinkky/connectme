@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//iPhone OS 17.3.1//EN
+N:Ramey;Melissa;;;
+FN:Melissa Ramey
+ORG:Energy Insurance Agency;
+EMAIL;type=INTERNET;type=WORK;type=pref:mramey@energyinsagency.com
+TEL;type=MAIN;type=pref:(513) 947-2581
+TEL;type=WORK;type=VOICE:(513) 947-8500
+TEL;type=CELL;type=VOICE:(513) 515-9464
+item1.ADR;type=WORK;type=pref:;;7661 Beechmont Ave\nSuite 220;Cincinnati;Ohio;45255;United States
+item1.X-ABADR:us
+END:VCARD
